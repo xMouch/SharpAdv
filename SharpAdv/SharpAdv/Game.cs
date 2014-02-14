@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 
-namespace AEngineTest
+namespace SharpAdv
 {
 	public class Game :InputListener
 	{
@@ -33,24 +33,17 @@ namespace AEngineTest
 			CommandProcessor cp = commands[input[0]];
 			if (cp != null) 
 			{
-				string[] parameter = new string[cp.parameters.Length];
-				for (int x = 0; x < cp.parameters.Length; x++) 
-				{
-					for (int y = 1; y < input.Length; y++) 
-					{
-						if (input [y] != null && cp.parameters [x].matching (input [y])) 
-						{
-							parameter [x] = input [y];
-							input [y] = null;
+				if (cp.parameters == null || cp.parameters.Length == 0) {
+					cp.Process (null);
+				} else {
+					for (int x = 0; x < cp.parameters.Length; x++) {
+						if (cp.parameters [x].IsMatching (input) !=null) {
+							cp.Process (input);
+							return;
 						}
 					}
-					if (parameter [x] == null) 
-					{
-						cp.Error (x);
-						return;
-					}
 				}
-				cp.Process (parameter);
+				//Fehlermeldung
 			} 
 			else
 				Console.WriteLine ("In der Konsole eine Fehlermeldung ausgeben");

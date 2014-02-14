@@ -1,6 +1,6 @@
 using System;
 
-namespace AEngineTest
+namespace SharpAdv
 {
 	public class Event
 	{

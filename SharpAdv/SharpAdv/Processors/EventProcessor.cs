@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace AEngineTest
+namespace SharpAdv
 {
 	public abstract class EventProcessor
 	{

@@ -1,14 +1,15 @@
 using System;
 using System.Reflection;
 using System.Collections.Generic;
+using System.IO;
 
-namespace AEngineTest
+namespace SharpAdv
 {
 	class MainClass
 	{
 		public static void Main (string[] args)
 		{
-			Console.ReadKey();
+			Game.get ();
 		}
 	}
 }

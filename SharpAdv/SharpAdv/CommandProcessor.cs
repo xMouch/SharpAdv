@@ -1,18 +1,18 @@
 ﻿using System;
 
-namespace AEngineTest
+namespace SharpAdv
 {
 	public abstract class CommandProcessor
 	{
 		public string[] commands{ get; set;}
-		public CommandParameter[] parameters{ get;set;}
+		public ParameterSet[] parameters{ get;set;}
 
 		public CommandProcessor ()
 		{
 		}
 
 		public abstract void Process(string[] args);
-		public abstract void Error(int parameter);
+		public abstract void Error(ParameterSet[] set, int index);
 
 	}
 }

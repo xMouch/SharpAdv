@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace AEngineTest
+namespace SharpAdv
 {
 	public interface CommandParameter
 	{
-		bool matching(string parameter);
+		bool Matching(string parameter);
 	}
 }
 
