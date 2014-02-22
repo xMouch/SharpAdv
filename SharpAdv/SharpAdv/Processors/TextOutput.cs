@@ -4,16 +4,16 @@ namespace SharpAdv
 {
 	public class TextOutput : EventProcessor
 	{
-		public string text{ get; set; }
+		public string Text{ get; set; }
 
 		public TextOutput (string text)
 		{
-			this.text = text;
+			this.Text = text;
 		}
 
 		public override void Event(Event e)
 		{
-			Console.WriteLine (text);
+			Console.WriteLine (Text);
 		}
 	}
 }

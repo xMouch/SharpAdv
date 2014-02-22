@@ -9,7 +9,8 @@ namespace SharpAdv
 	{
 		public static void Main (string[] args)
 		{
-			Game.get ();
+			Game.Get ();
+			Game.Get ().Init ();
 		}
 	}
 }
