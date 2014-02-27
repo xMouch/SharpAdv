@@ -20,6 +20,7 @@ namespace SharpAdv
 			client = new MongoClient (connectionString);
 			server = client.GetServer ();
 			database = server.GetDatabase ("sharpA");
+			//TODO
 		}
 	}
 }
