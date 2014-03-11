@@ -46,13 +46,13 @@ namespace SharpAdv
 			if (cp != null) 
 			{
 				if (cp.parameters == null || cp.parameters.Length == 0) {
-					cp.Process (null);
+					cp.Process (null,null);
 				} else {
 					input [0] = null;
 					for (int x = 0; x < cp.parameters.Length; x++) {
 						string[] output = cp.parameters [x].IsMatching (input);
 						if (output !=null) {
-							cp.Process (output);
+							cp.Process (output,cp.parameters[x]);
 							return;
 						}
 					}

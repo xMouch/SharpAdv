@@ -22,7 +22,8 @@ namespace SharpAdv
 				{
 					if (parameters [x] != null && cp.Matching(parameters[x]))
 					{
-						output [x] = parameters [x];
+						output [Parameters.IndexOf(cp)] = parameters [x];
+						parameters [x] = null;
 						found = true;
 						break;
 					}

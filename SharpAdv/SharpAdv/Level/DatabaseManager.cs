@@ -19,8 +19,20 @@ namespace SharpAdv
 		{
 			client = new MongoClient (connectionString);
 			server = client.GetServer ();
-			database = server.GetDatabase ("sharpA");
-			//TODO
+			if (server.DatabaseExists ("sharpA"))
+				database = server.GetDatabase ("sharpA");
+			else
+				database = InitDatabase ();
+		}
+
+		private MongoDatabase InitDatabase()
+		{
+			MongoDatabase db = server.GetDatabase ("sharpA");//CREATE DATABASE, CHECK IF POSSIBLE WITH GETDATABASE
+
+			//Init Collections
+			db.GetCollection ("levels");
+
+			return db;
 		}
 	}
 }

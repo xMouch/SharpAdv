@@ -66,6 +66,7 @@ namespace SharpAdv
 					EventProcessor.Process (p.If, e);
 				else
 					EventProcessor.Process (p.Else, e);
+				e.If = false;
 				if (e.Cancel)
 					break;
 			}

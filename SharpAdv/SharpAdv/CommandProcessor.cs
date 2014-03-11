@@ -11,7 +11,7 @@ namespace SharpAdv
 		{
 		}
 
-		public abstract void Process(string[] args);
+		public abstract void Process(string[] args, ParameterSet foundParameters);
 		public abstract void Error(ParameterSet[] set, int index);
 
 	}
