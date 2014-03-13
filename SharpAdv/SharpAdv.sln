@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpAdv", "SharpAdv\SharpAdv.csproj", "{1153C0FE-04D7-4CFB-84AE-CBEB1B703911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Artemis_Mono", "..\..\..\..\Entwicklung\libs\artemis_CSharp-1.4\Artemis_Mono\Artemis_Mono.csproj", "{93A803F6-64E4-4FCE-98CC-9E6101BDAC69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Driver", "..\..\..\..\Entwicklung\libs\mongo-Drivers\mongo-csharp-driver-1.8.3.9\MongoDB.Driver\MongoDB.Driver.csproj", "{AE5166CD-76B0-4911-BD80-CED9521F37A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Bson", "..\..\..\..\Entwicklung\libs\mongo-Drivers\mongo-csharp-driver-1.8.3.9\MongoDB.Bson\MongoDB.Bson.csproj", "{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}.Debug|x86.Build.0 = Debug|Any CPU
+		{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}.Release|x86.ActiveCfg = Release|Any CPU
+		{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}.Release|x86.Build.0 = Release|Any CPU
+		{1153C0FE-04D7-4CFB-84AE-CBEB1B703911}.Debug|x86.ActiveCfg = Debug|x86
+		{1153C0FE-04D7-4CFB-84AE-CBEB1B703911}.Debug|x86.Build.0 = Debug|x86
+		{1153C0FE-04D7-4CFB-84AE-CBEB1B703911}.Release|x86.ActiveCfg = Release|x86
+		{1153C0FE-04D7-4CFB-84AE-CBEB1B703911}.Release|x86.Build.0 = Release|x86
+		{93A803F6-64E4-4FCE-98CC-9E6101BDAC69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{93A803F6-64E4-4FCE-98CC-9E6101BDAC69}.Debug|x86.Build.0 = Debug|Any CPU
+		{93A803F6-64E4-4FCE-98CC-9E6101BDAC69}.Release|x86.ActiveCfg = Release|Any CPU
+		{93A803F6-64E4-4FCE-98CC-9E6101BDAC69}.Release|x86.Build.0 = Release|Any CPU
+		{AE5166CD-76B0-4911-BD80-CED9521F37A1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AE5166CD-76B0-4911-BD80-CED9521F37A1}.Debug|x86.Build.0 = Debug|Any CPU
+		{AE5166CD-76B0-4911-BD80-CED9521F37A1}.Release|x86.ActiveCfg = Release|Any CPU
+		{AE5166CD-76B0-4911-BD80-CED9521F37A1}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SharpAdv\SharpAdv.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1153C0FE-04D7-4CFB-84AE-CBEB1B703911}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SharpAdv</RootNamespace>
+    <AssemblyName>SharpAdv</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="CommandProcessor.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="InputListener.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Parameter\CommandParameter.cs" />
+    <Compile Include="Processors\Break.cs" />
+    <Compile Include="Processors\Cancel.cs" />
+    <Compile Include="Processors\EventProcessor.cs" />
+    <Compile Include="Processors\TextOutput.cs" />
+    <Compile Include="Parameter\ParameterSet.cs" />
+    <Compile Include="Parameter\OrParameter.cs" />
+    <Compile Include="Parameter\AndParameter.cs" />
+    <Compile Include="Parameter\NotParameter.cs" />
+    <Compile Include="Level\Room.cs" />
+    <Compile Include="Events\EventType.cs" />
+    <Compile Include="Level\DatabaseManager.cs" />
+    <Compile Include="Processors\EventProcessorManager.cs" />
+    <Compile Include="Components\AccessComponent.cs" />
+    <Compile Include="Parameter\ObjectParameter.cs" />
+    <Compile Include="Parameter\TextParameter.cs" />
+    <Compile Include="Parameter\NumberParameter.cs" />
+    <Compile Include="Level\Level.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+    <Folder Include="Parameter\" />
+    <Folder Include="Processors\" />
+    <Folder Include="Level\" />
+    <Folder Include="Components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Entwicklung\libs\artemis_CSharp-1.4\Artemis_Mono\Artemis_Mono.csproj">
+      <Project>{93A803F6-64E4-4FCE-98CC-9E6101BDAC69}</Project>
+      <Name>Artemis_Mono</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Entwicklung\libs\mongo-Drivers\mongo-csharp-driver-1.8.3.9\MongoDB.Driver\MongoDB.Driver.csproj">
+      <Project>{AE5166CD-76B0-4911-BD80-CED9521F37A1}</Project>
+      <Name>MongoDB.Driver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Entwicklung\libs\mongo-Drivers\mongo-csharp-driver-1.8.3.9\MongoDB.Bson\MongoDB.Bson.csproj">
+      <Project>{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}</Project>
+      <Name>MongoDB.Bson</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MsgPack">
+      <HintPath>..\..\..\..\..\Entwicklung\libs\msgpack-msgpack-cli-f5a6ec5\bin\net40\MsgPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
