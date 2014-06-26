@@ -19,19 +19,21 @@ namespace SharpAdv
 		public EventProcessorManager EPManager{ get; private set; }
 		private Dictionary<string,CommandProcessor> commands;
 		public InputListener InputListener{ get; set;}
+		public DatabaseManager DBManager{ get; private set; }
 
 		private Game ()
 		{
 			commands = new Dictionary<string, CommandProcessor> (30);
-			EPManager = new EventProcessorManager ();
 			World = new EntityWorld ();
+			EPManager = new EventProcessorManager (World);
+			DBManager = new DatabaseManager (World);
 		}
 
 		public void Init ()
 		{
-			World.EntityManager.AddedEntityEvent += EPManager.Add;
-			World.EntityManager.RemovedEntityEvent += EPManager.Remove;
+			ProcessorExtension.EPManager = EPManager;
 			World.InitializeAll ();
+			DBManager.Init ();
 		}
 
 		public void registerCommandProcessor(CommandProcessor processor)

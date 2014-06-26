@@ -1,32 +1,33 @@
 ﻿using System;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace SharpAdv
 {
 	public class EventType
 	{
-		public Type Type{ get; private set;}
+		internal static int nextId;
 
-		public EventType (Event e)
-		{
-			Type = e.GetType ();
-		}
+		[BsonId]
+		public int Id{ get; set; }
 
-		public EventType(Type t)
+		/**
+		 * Nicht verwenden, der parameterlose Konstruktor ist nur für den MongoDB Serializer
+		 * */
+		public EventType()
 		{
-			if (t.IsSubclassOf (typeof(Event)))
-				Type = t;
-			else
-				throw new ArgumentException ("Type has to be an Event");
 		}
 
 		public override bool Equals(Object o)
 		{
-			return Type.GUID.Equals(o.GetType().GUID);
+			if (o is EventType)
+				return ((EventType)o).Id == Id;
+			return false;
 		}
 
 		public override int GetHashCode()
 		{
-			return Type.GetHashCode ();
+			return Id;
 		}
 	}
 }

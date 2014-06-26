@@ -44,7 +44,6 @@
     <Compile Include="Parameter\OrParameter.cs" />
     <Compile Include="Parameter\AndParameter.cs" />
     <Compile Include="Parameter\NotParameter.cs" />
-    <Compile Include="Level\Room.cs" />
     <Compile Include="Events\EventType.cs" />
     <Compile Include="Level\DatabaseManager.cs" />
     <Compile Include="Processors\EventProcessorManager.cs" />
@@ -53,6 +52,14 @@
     <Compile Include="Parameter\TextParameter.cs" />
     <Compile Include="Parameter\NumberParameter.cs" />
     <Compile Include="Level\Level.cs" />
+    <Compile Include="Level\Scene.cs" />
+    <Compile Include="Level\Parameter.cs" />
+    <Compile Include="Level\Dialog.cs" />
+    <Compile Include="EntitySerializer.cs" />
+    <Compile Include="Components\SerializationInfo.cs" />
+    <Compile Include="Components\Description.cs" />
+    <Compile Include="Level\EventProcessorContainer.cs" />
+    <Compile Include="Events\EventTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Events\" />

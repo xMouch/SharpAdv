@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace SharpAdv
 {
-	public class Level
+	[BsonIgnoreExtraElements]
+	public class Dialog
 	{
-		[BsonId]
 		public string Name{ get; set; }
-		public string CurrentScene{ get; set; }
+		public string LevelName{ get; set; }
+		public string ScriptContent{ get; set; }
 
-		public Level ()
+		public Dialog ()
 		{
-
 		}
 	}
 }

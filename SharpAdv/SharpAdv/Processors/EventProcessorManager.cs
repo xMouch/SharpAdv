@@ -9,9 +9,11 @@ namespace SharpAdv
 	{
 		public Dictionary<Entity,Dictionary<EventType, List<EventProcessor>>> Entities{ get; private set; }
 
-		public EventProcessorManager ()
+		public EventProcessorManager (EntityWorld world)
 		{
 			Entities = new Dictionary<Entity, Dictionary<EventType, List<EventProcessor>>> (32);
+			world.EntityManager.AddedEntityEvent += Add;
+			world.EntityManager.RemovedEntityEvent += Remove;
 		}
 			
 		public void Add(Entity entity)
@@ -27,9 +29,11 @@ namespace SharpAdv
 
 	public static class ProcessorExtension
 	{
+		public static EventProcessorManager EPManager { get; set; }
+
 		public static void AddProcessor(this Entity entity,EventType type, EventProcessor processor)
 		{
-			Dictionary<Entity,Dictionary<EventType, List<EventProcessor>>> dic = Game.Get ().EPManager.Entities;
+			Dictionary<Entity,Dictionary<EventType, List<EventProcessor>>> dic = EPManager.Entities;
 			if (!dic [entity].ContainsKey(type))
 				dic [entity].Add (type, new List<EventProcessor> (16));
 			dic[entity][type].Add(processor);
@@ -37,25 +41,30 @@ namespace SharpAdv
 
 		public static void AddProcessor(this Entity entity,EventType type, EventProcessor processor, int index)
 		{
-			Dictionary<Entity,Dictionary<EventType, List<EventProcessor>>> dic = Game.Get ().EPManager.Entities;
+			Dictionary<Entity,Dictionary<EventType, List<EventProcessor>>> dic = EPManager.Entities;
 			if (!dic [entity].ContainsKey(type))
 				dic [entity].Add (type, new List<EventProcessor> (16));
 			dic[entity][type].Insert(index, processor);
 		}
 
+		public static void SetProcessors(this Entity entity, Dictionary<EventType,List<EventProcessor>> eventProcessors)
+		{
+			EPManager.Entities [entity] = eventProcessors;
+		}
+
 		public static void RemoveProcessor(this Entity entity,EventType type, EventProcessor processor)
 		{
-			Game.Get ().EPManager.Entities[entity][type].Remove(processor);
+			EPManager.Entities[entity][type].Remove(processor);
 		}
 
 		public static Dictionary<EventType, List<EventProcessor>> GetAllEventProcessors(this Entity entity)
 		{
-			return Game.Get ().EPManager.Entities[entity];
+			return EPManager.Entities[entity];
 		}
 
 		public static List<EventProcessor> GetEventProcessors(this Entity entity, EventType type)
 		{
-			return Game.Get ().EPManager.Entities[entity][type];
+			return EPManager.Entities[entity][type];
 		}
 	}
 }

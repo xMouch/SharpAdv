@@ -1,11 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace SharpAdv
 {
 	public abstract class EventProcessor
 	{
+		[BsonId]
+		public ObjectId Id{ get; set; }
+
 		public List<EventProcessor> If{ get; set; }
 		public List<EventProcessor> Else{ get; set; }
 

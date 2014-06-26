@@ -1,25 +1,28 @@
 ﻿using System;
 using Artemis;
 using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace SharpAdv
 {
-	public class Room
+	[BsonIgnoreExtraElements]
+	public class Scene
 	{
-		public string ID{ get; private set; }
+		public string Name{ get; set; }	
+		public string LevelName{ get; set; }
 		public string Description{ get; set; }
 		public uint Width{ get; set; }
 		public uint Height{ get; set; }
-		public List<Entity> Entities{ get; set; }
 
-		public Room ()
+		public Scene ()
 		{
 
 		}
 
-		public Room(string ID, string Description, uint Width, uint Height)
+		public Scene(string Name, string Description, uint Width, uint Height)
 		{
-			this.ID = ID;
+			this.Name = Name;
 			this.Description = Description;
 			this.Width = Width;
 			this.Height = Height;
